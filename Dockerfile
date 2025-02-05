@@ -4,10 +4,10 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copy the requirements file
-COPY requirements.txt .
+COPY constraints.txt .
 
 # Install the dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -c constraints.txt
 
 # Copy the rest of the application code
 COPY . .
@@ -16,4 +16,4 @@ COPY . .
 EXPOSE 5000
 
 # Define the command to run the application
-CMD ["flask", "run", "--host=0.0.0.0"]
+CMD ["python", "app.py"]

@@ -2,10 +2,6 @@ from flask import Flask, request, render_template, send_file
 import re
 import os
 
-from flask import Flask, request, render_template, send_file
-import re
-import os
-
 def join_wrapped_lines(text):
     # Join lines that don't end with period/question/exclamation marks
     sentences = []
