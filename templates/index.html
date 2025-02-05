@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRT Cleaner</title>
+</head>
+<body>
+    <h1>Subtitle Cleaner</h1>
+    
+    <form action="/" method="post" enctype="multipart/form-data">
+        <label for="text_input">Paste Subtitle Text:</label><br>
+        <textarea name="text_input" id="text_input" rows="10" cols="50"></textarea><br><br>
+        
+        <label for="file">Or Upload an .srt File:</label>
+        <input type="file" name="file" id="file" accept=".srt"><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if cleaned_text %}
+        <h2>Cleaned Text:</h2>
+        <pre>{{ cleaned_text }}</pre>
+    {% endif %}
+
+    {% if file_link %}
+        <p><a href="{{ file_link }}" download>Download Cleaned Text</a></p>
+    {% endif %}
+</body>
+</html>
